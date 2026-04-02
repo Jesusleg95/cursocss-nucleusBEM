@@ -194,10 +194,35 @@ img {
     transform: scale(1.1);
 }
 
+@media (min-width: 768px) {
+    .listado__elemento--2col {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+    }
+}
+
 .listado__heading {
     font-size: 3rem;
     color: var(--primario);
     margin: 0;
+}
+
+.listado__numero {
+    font-size: 6rem;
+    margin: 0;
+    font-weight: 900;
+    color: var(--primario);
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .listado__numero {
+        flex-basis: 20rem;
+        text-align: right;
+        font-size: 4rem;
+    }
 }
 
 .listado__texto {
@@ -208,31 +233,9 @@ img {
 /* Seguridad */
 .seguridad {
     background-color: var(--primario);
-    padding: 20rem 0;
+    padding: 10rem 0;
     position: relative;
-    margin: 10rem 0;
-    overflow-x: hidden;
-}
-
-.seguridad::before,
-.seguridad::after {
-    background-color: var(--blanco);
-    content: '';
-    height: 20rem;
-    width: 120%;
-    position: absolute;
-}
-
-.seguridad::before {
-    top: -10rem;
-    left: 0;
-    transform: rotate(4deg);
-}
-
-.seguridad::after {
-    bottom: -10rem;
-    left: 0;
-    transform: rotate(4deg);
+    clip-path: polygon(0 0,100% 10%, 100% 100%, 0 90%);
 }
 
 .seguridad__heading {
@@ -245,5 +248,33 @@ img {
         grid-template-columns: repeat(2, 1fr);
         column-gap: 5rem;
         align-items: center;
+    }
+}
+
+/* Comisiones */
+@media (min-width: 768px) {
+    .comisiones__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 5rem;
+        align-items: flex-end;
+    }
+}
+
+@media (min-width: 998px) {
+    .comisiones__grid {
+        align-items: center;
+    }
+}
+
+.comisiones__texto {
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+@media (min-width: 768px) {
+    .comisiones__texto {
+        text-align: left;
     }
 }
